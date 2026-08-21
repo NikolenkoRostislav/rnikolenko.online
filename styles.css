@@ -10,12 +10,31 @@ body {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Segoe UI", sans-serif;
 
-    background: #f9f9f7;
-    color: #3d3d3a;
+    background: #735A52;
+    background-image: url("assets/texture.png");
+    background-repeat: repeat;
+    color: #a09564;
 }
 
+a {
+    color: #a09463;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c0ad68;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #85794b;
+}
+
+a:active {
+    color: #a09463;
+}
 
 /* ─────────────────────────────────────────
     Header
@@ -28,9 +47,8 @@ body {
     align-items: center;
 
     padding: 0 2rem;
-
-    background: #fff;
-    border-bottom: 1px solid #e5e5e0;
+    background: #3b25084f;
+    border-bottom: 3px solid #30200b;
 }
 
 .site-header h1 {
@@ -70,11 +88,10 @@ body {
     width: 100%;
     min-height: 100%;
 
-    padding: 2rem;
+    padding: 1rem;
 
-    background: #fff;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
+    background: #3b25084f;
+    border: 3px solid #30200b;
 }
 
 
@@ -90,9 +107,8 @@ body {
     min-width: 0;
     padding: 1.5rem;
 
-    background: #f9f9f7;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
+    background: #4b381f;
+    border: 3px solid #30200b;
 }
 
 .profile-image {
@@ -104,6 +120,7 @@ body {
     object-fit: cover;
     object-position: center 30%;
 
+    border: 3px solid #30200b;
     border-radius: 8px;
 }
 
@@ -119,10 +136,6 @@ body {
     gap: 1.25rem;
 
     padding: 1.5rem;
-
-    background: #fff;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
 }
 
 .profile-field {
@@ -136,23 +149,14 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #888780;
+    color: #a09564;
 }
 
 .profile-value {
     font-size: 14px;
     line-height: 1.5;
-    color: #3d3d3a;
+    color: #c4bc9b;
     overflow-wrap: anywhere;
-}
-
-a.profile-value {
-    color: #378add;
-    text-decoration: none;
-}
-
-a.profile-value:hover {
-    text-decoration: underline;
 }
 
 /* ─────────────────────────────────────────
@@ -163,9 +167,8 @@ a.profile-value:hover {
     min-width: 0;
     padding: 1.5rem;
 
-    background: #f9f9f7;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
+    background: #4b381f;
+    border: 3px solid #30200b;
 
     overflow-y: auto;
 }
@@ -183,7 +186,7 @@ a.profile-value:hover {
     font-size: 14px;
     line-height: 1.8;
 
-    color: #5f5e5a;
+    color: #c4bc9b;
     white-space: pre-line;
 }
 
@@ -193,10 +196,11 @@ a.profile-value:hover {
 
 .about-quote {
     padding: 1.25rem;
+    border-left: 3px solid #a09564;
 
-    border-left: 3px solid #d3d1c7;
+    background-color: #a0956444;
 
-    color: #888780;
+    color: #a09564;
 }
 
 .about-quote p {
@@ -214,7 +218,7 @@ a.profile-value:hover {
 
     font-size: 12px;
     font-style: normal;
-    color: #5f5e5a;
+    color: #a09564;
 }
 
 /* ─────────────────────────────────────────
@@ -227,8 +231,8 @@ a.profile-value:hover {
 
     padding: 1.5rem;
 
-    background: #fff;
-    border-left: 1px solid #e5e5e0;
+    background: #3b25084f;
+    border-left: 3px solid #30200b;
 
     overflow-y: auto;
 }
@@ -242,7 +246,7 @@ a.profile-value:hover {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
-    color: #888780;
+    color: #a09564;
 }
 
 .projects-list {
@@ -259,18 +263,13 @@ a.profile-value:hover {
     padding: 0.75rem 1rem;
 
     font-size: 14px;
-    color: #378add;
-
-    text-decoration: none;
     border-radius: 6px;
+    background: #4b381f;
+    border: 3px solid #30200b;
 }
 
 .projects-list a:hover {
-    background: #e6f1fb;
-}
-
-.projects-list a:active {
-    color: #185fa5;
+    background: #6b502d;
 }
 
 /* ─────────────────────────────────────────
@@ -295,8 +294,8 @@ a.profile-value:hover {
 
     text-align: center;
 
-    background: #fff;
-    border: 1px solid #d3d1c7;
+    background: #4b381fb9;
+    border: 3px solid #30200b;
     border-radius: 8px;
 }
 
@@ -321,7 +320,7 @@ a.profile-value:hover {
     font-size: 14px;
     line-height: 1.7;
 
-    color: #5f5e5a;
+    color: #c4bc9b;
 }
 
 .back-link {
@@ -330,11 +329,4 @@ a.profile-value:hover {
     margin-top: 1.5rem;
 
     font-size: 14px;
-    color: #378add;
-
-    text-decoration: none;
-}
-
-.back-link:hover {
-    text-decoration: underline;
 }
