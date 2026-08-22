@@ -49,7 +49,7 @@
         align-items: center;
 
         padding: 0 2rem;
-        background: #3b25084f;
+        background: #554228;
         border-bottom: 3px solid #30200b;
     }
 
@@ -91,9 +91,6 @@
         min-height: 100%;
 
         padding: 1rem;
-
-        background: #3b25084f;
-        border: 3px solid #30200b;
     }
 
 
@@ -109,7 +106,7 @@
         min-width: 0;
         padding: 1.5rem;
 
-        background: #4b381f;
+        background: #554228;
         border: 3px solid #30200b;
     }
 
@@ -169,7 +166,7 @@
         min-width: 0;
         padding: 1.5rem;
 
-        background: #4b381f;
+        background: #554228;
         border: 3px solid #30200b;
 
         overflow-y: auto;
@@ -197,6 +194,8 @@
    ───────────────────────────────────────── */
 
     .about-quote {
+        margin-left: 15%;
+        margin-right: 15%;
         padding: 1.25rem;
         border-left: 3px solid #a09564;
 
@@ -233,7 +232,7 @@
 
         padding: 1.5rem;
 
-        background: #3b25084f;
+        background: #554228;
         border-left: 3px solid #30200b;
 
         overflow-y: auto;
@@ -266,12 +265,12 @@
 
         font-size: 14px;
         border-radius: 6px;
-        background: #4b381f;
+        background: #412f1a;
         border: 3px solid #30200b;
     }
 
     .projects-list a:hover {
-        background: #6b502d;
+        background: #4b381e;
     }
 
     /* ─────────────────────────────────────────
@@ -296,7 +295,7 @@
 
         text-align: center;
 
-        background: #4b381fb9;
+        background: #554228;
         border: 3px solid #30200b;
         border-radius: 8px;
     }
@@ -421,7 +420,7 @@
 
         padding: 0 1rem;
 
-        background: #3b25084f;
+        background: #554228;
         border-bottom: 3px solid #30200b;
     }
 
@@ -456,9 +455,6 @@
         min-height: auto;
 
         padding: 0.75rem;
-
-        background: #3b25084f;
-        border: 3px solid #30200b;
     }
 
     /* ─────────────────────────────────────────
@@ -472,7 +468,7 @@
 
         padding: 1rem;
 
-        background: #4b381f;
+        background: #554228;
         border: 3px solid #30200b;
     }
 
@@ -528,7 +524,7 @@
     .about {
         padding: 1rem;
 
-        background: #4b381f;
+        background: #554228;
         border: 3px solid #30200b;
     }
 
@@ -554,6 +550,8 @@
        ───────────────────────────────────────── */
 
     .about-quote {
+        margin-left: 10%;
+        margin-right: 10%;
         padding: 1rem;
 
         border-left: 3px solid #a09564;
@@ -589,7 +587,7 @@
 
         padding: 1rem;
 
-        background: #3b25084f;
+        background: #554228;
         border-top: 3px solid #30200b;
     }
 
@@ -625,12 +623,12 @@
         font-size: 14px;
 
         border-radius: 6px;
-        background: #4b381f;
+        background: #412f1a;
         border: 3px solid #30200b;
     }
 
     .projects-list a:hover {
-        background: #6b502d;
+        background: #4b381e;
     }
 
     /* ─────────────────────────────────────────
@@ -690,4 +688,28 @@
 
         font-size: 14px;
     }
+}
+
+.beans-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.beans-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("assets/beans.jpg");
+    background-size: 200px;
+    background-position: center;
+
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.beans-bg>* {
+    position: relative;
+    z-index: 1;
 }
