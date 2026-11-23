@@ -1,5 +1,5 @@
 body {
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
 
@@ -117,4 +117,28 @@ footer a:hover {
         height: 140px;
         transform: rotate(3deg) translateY(-5px) translateX(10px);
     }
+}
+
+/* Firefox */
+* {
+    scrollbar-color: #554330 #1a1510;
+    scrollbar-width: thin;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1510;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #554330;
+    border: 1px solid #30251d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #806344;
 }
