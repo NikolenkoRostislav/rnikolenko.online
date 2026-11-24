@@ -1,50 +1,71 @@
-const windowElement = document.querySelector(".window");
-const header = windowElement.querySelector("header");
 
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
+const windows = document.querySelectorAll(".window");
+const shortcuts = document.querySelectorAll(".desktop-icon");
 
-header.addEventListener("mousedown", (e) => {
-    isDragging = true;
+let highestZIndex = 10;
 
-    const rect = windowElement.getBoundingClientRect();
+windows.forEach((windowElement) => {
+    const header = windowElement.querySelector("header");
+    const closeButton = windowElement.querySelector(".close-button");
 
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    closeButton.addEventListener("click", () => {
+        windowElement.style.display = "none";
+    });
+
+    header.addEventListener("pointerdown", (e) => {
+        if (e.target.closest(".close-button")) return;
+        if (e.button !== 0) return;
+
+        isDragging = true;
+
+        highestZIndex++;
+        windowElement.style.zIndex = highestZIndex;
+
+        const rect = windowElement.getBoundingClientRect();
+
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
+        windowElement.style.left = `${rect.left}px`;
+        windowElement.style.top = `${rect.top}px`;
+        windowElement.style.transform = "none";
+
+        header.setPointerCapture(e.pointerId);
+    });
+
+    header.addEventListener("pointermove", (e) => {
+        if (!isDragging) return;
+
+        windowElement.style.left = `${e.clientX - offsetX}px`;
+        windowElement.style.top = `${e.clientY - offsetY}px`;
+    });
+
+    header.addEventListener("pointerup", () => {
+        isDragging = false;
+    });
+
+    header.addEventListener("pointercancel", () => {
+        isDragging = false;
+    });
 });
 
-document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
+function openWindow(selector) {
+    const windowElement = document.querySelector(selector);
 
-    windowElement.style.left = `${e.clientX - offsetX}px`;
-    windowElement.style.top = `${e.clientY - offsetY}px`;
-
-    windowElement.style.transform = "none";
-});
-
-document.addEventListener("mouseup", () => {
-    isDragging = false;
-});
-
-
-const closeButton = document.querySelector(".close-button");
-const shortcut = document.querySelector("#about-shortcut");
-
-closeButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    windowElement.style.display = "none";
-});
-
-function openWindow() {
     windowElement.style.display = "flex";
+
+    highestZIndex++;
+    windowElement.style.zIndex = highestZIndex;
 }
 
-shortcut.addEventListener("click", openWindow);
+document.querySelector("#about-shortcut").addEventListener("click", () => {
+    openWindow(".window:not(.links-window)");
+});
 
-shortcut.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openWindow();
-    }
+document.querySelector("#links-shortcut").addEventListener("click", () => {
+    openWindow(".links-window");
 });
