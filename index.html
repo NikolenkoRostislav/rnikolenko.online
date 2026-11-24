@@ -15,6 +15,7 @@
     <div class="window">
         <header>
             <h1>rnikolenko.online</h1>
+            <button class="close-button" aria-label="Close window">✖</button>
         </header>
 
         <main>
@@ -30,11 +31,11 @@
 
             <p>
                 Pls send me your VN recommendations! I love horror
-                ones! You can find my email address down below.
+                ones! Click the email icon to send me a message.
             </p>
 
             <p>
-                You're gonna find a collection of links to various things I like on the links page. (Coming soon!)
+                You're gonna find a collection of links to various things I like on the links page.
             </p>
 
             <p>
@@ -65,25 +66,36 @@
         </main>
     </div>
 
-    <footer>
-        <div>
-            <a href="mailto:rostislavnikolenkowork@gmail.com">
-                Email Me
-            </a>
-        </div>
+    <div class="desktop">
 
-        <div>
-            <a href="https://github.com/NikolenkoRostislav" target="_blank" rel="noopener">
-                My GitHub
-            </a>
-        </div>
+        <button class="desktop-icon" id="about-shortcut">
+            <img src="assets/firefox.png" alt="">
+            <span>About Me</span>
+        </button>
 
-        <div>
-            <a href="https://nandev.io/" target="_blank" rel="noopener">
-                Something Super Awesome
-            </a>
-        </div>
-    </footer>
+        <a class="desktop-icon" href="mailto:rostislavnikolenkowork@gmail.com">
+            <img src="assets/email.png" alt="">
+            <span>Email Me</span>
+        </a>
+
+        <button class="desktop-icon" id="links-shortcut">
+            <img src="assets/txtdoc.png" alt="">
+            <span>Links</span>
+        </button>
+
+        <a class="desktop-icon" href="https://github.com/NikolenkoRostislav" target="_blank" rel="noopener">
+            <img src="assets/githubwhite.png" alt="">
+            <span>GitHub</span>
+        </a>
+
+        <a class="desktop-icon" href="https://nandev.io/" target="_blank" rel="noopener">
+            <img src="assets/nandev.png" alt="">
+            <span>Nandev</span>
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

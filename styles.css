@@ -12,18 +12,27 @@ body {
 }
 
 .window {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
     width: 80%;
     max-width: 900px;
     min-height: 80vh;
-
-    margin: 40px auto 0;
 
     display: flex;
     flex-direction: column;
 }
 
 header {
-    padding: 1px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1px 8px 1px 16px;
+    height: 30px;
 
     background: linear-gradient(to top,
             #554330 0%,
@@ -34,39 +43,51 @@ header {
 
     border: 1px solid rgb(82, 64, 45);
     border-bottom: none;
+
+    cursor: grab;
+    user-select: none;
+}
+
+header:active {
+    cursor: grabbing;
 }
 
 header h1 {
     font-size: 20px;
 }
 
-main {
-    color: #e4d7c1;
+.close-button {
+    width: 20px;
+    height: 20px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #8b6950;
+    background: #80513b;
+    color: white;
+
+    font-size: 14px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background: #b34b3d;
+}
+
+main {
     flex: 1;
     padding: 24px;
 
+    color: #e4d7c1;
+
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgb(82, 64, 45);
-}
-
-footer {
-    width: 80%;
-    max-width: 900px;
-    margin: auto auto 0;
-    padding: 16px 0;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-footer a {
-    color: #d6a96c;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: #ffcf8a;
 }
 
 .cat-gallery {
@@ -98,26 +119,55 @@ footer a:hover {
     transform: rotate(3deg) translateY(-5px) translateX(30px);
 }
 
-@media (max-width: 900px) {
-    .cat-gallery {
-        gap: 15px;
-        padding: 25px 10px;
-    }
+.desktop {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    padding: 20px;
 
-    /* Yuzik */
-    .cat-gallery img:first-child {
-        width: 130px;
-        height: 160px;
-        transform: rotate(-5deg) translateY(-5px) translateX(-15px);
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
 
-    /* Rudolf */
-    .cat-gallery img:last-child {
-        width: 190px;
-        height: 140px;
-        transform: rotate(3deg) translateY(-5px) translateX(10px);
-    }
+    pointer-events: none;
 }
+
+.desktop-icon {
+    width: 80px;
+    min-height: 75px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.desktop-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Scrollbars */
 
 /* Firefox */
 * {
@@ -141,4 +191,24 @@ footer a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #806344;
+}
+
+
+@media (max-width: 900px) {
+    .cat-gallery {
+        gap: 15px;
+        padding: 25px 10px;
+    }
+
+    .cat-gallery img:first-child {
+        width: 130px;
+        height: 160px;
+        transform: rotate(-5deg) translateY(-5px) translateX(-15px);
+    }
+
+    .cat-gallery img:last-child {
+        width: 190px;
+        height: 140px;
+        transform: rotate(3deg) translateY(-5px) translateX(10px);
+    }
 }
