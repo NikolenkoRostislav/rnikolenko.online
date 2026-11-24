@@ -428,3 +428,53 @@ main {
     color: #222;
     border-color: #999;
 }
+
+.start-menu {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    left: 4px;
+    width: 220px;
+    padding: 8px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    box-shadow: 2px 2px 0 #000;
+    z-index: 1001;
+    font-family: Arial, sans-serif;
+}
+
+.start-menu.open {
+    display: block;
+}
+
+.start-menu-title {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.start-menu-section p {
+    margin: 4px 0 8px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.background-option {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.background-option:hover,
+.background-option.active {
+    background: #000080;
+    color: white;
+}

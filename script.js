@@ -162,8 +162,65 @@ document.querySelector("#links-shortcut").addEventListener("click", () => {
     openWindow(document.querySelector(".links-window"));
 });
 
-document.querySelector(".start-button").addEventListener("click", () => {
+const startButton = document.querySelector(".start-button");
+const startMenu = document.querySelector("#start-menu");
+const backgroundOptions = document.querySelectorAll(".background-option");
+
+const backgrounds = ["bg1.png", "bg2.png", "bg3.png", "bg4.png"];
+
+function toggleStartMenu() {
+    const isOpen = startMenu.classList.toggle("open");
+
+    startButton.setAttribute("aria-expanded", isOpen);
+}
+
+function closeStartMenu() {
+    startMenu.classList.remove("open");
+    startButton.setAttribute("aria-expanded", "false");
+}
+
+function changeBackground(filename) {
+    if (!backgrounds.includes(filename)) return;
+
+    document.body.style.backgroundImage = `url("assets/${filename}")`;
+
+    localStorage.setItem("desktop-background", filename);
+
+    backgroundOptions.forEach((option) => {
+        option.classList.toggle(
+            "active",
+            option.dataset.background === filename
+        );
+    });
+
+    closeStartMenu();
+}
+
+startButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleStartMenu();
 });
+
+backgroundOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+        changeBackground(option.dataset.background);
+    });
+});
+
+document.addEventListener("click", (e) => {
+    if (
+        !startMenu.contains(e.target) &&
+        !startButton.contains(e.target)
+    ) {
+        closeStartMenu();
+    }
+});
+
+const savedBackground = localStorage.getItem("desktop-background");
+
+if (backgrounds.includes(savedBackground)) {
+    changeBackground(savedBackground);
+}
 
 function updateClock() {
     document.querySelector("#clock").textContent =

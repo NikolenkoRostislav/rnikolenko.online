@@ -201,7 +201,7 @@
 
 
     <div class="taskbar">
-        <button class="start-button">
+        <button class="start-button" aria-expanded="false" aria-controls="start-menu">
             <img src="assets/windows.png" alt="">
             Start
         </button>
@@ -212,6 +212,30 @@
 
         <div class="system-tray">
             <span id="clock"></span>
+        </div>
+    </div>
+
+    <div class="start-menu" id="start-menu">
+        <div class="start-menu-title">Personalization</div>
+
+        <div class="start-menu-section">
+            <p>Desktop Background</p>
+
+            <button class="background-option" data-background="bg1.png">
+                Background 1
+            </button>
+
+            <button class="background-option" data-background="bg2.png">
+                Background 2
+            </button>
+
+            <button class="background-option" data-background="bg3.png">
+                Background 3
+            </button>
+
+            <button class="background-option" data-background="bg4.png">
+                Background 4
+            </button>
         </div>
     </div>
 
