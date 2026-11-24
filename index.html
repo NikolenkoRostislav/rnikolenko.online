@@ -15,7 +15,10 @@
     <div class="window">
         <header>
             <h1>rnikolenko.online</h1>
-            <button class="close-button" aria-label="Close window">✖</button>
+            <div class="window-controls">
+                <button class="minimize-button" aria-label="Minimize window">–</button>
+                <button class="close-button" aria-label="Close window">✖</button>
+            </div>
         </header>
 
         <main>
@@ -70,7 +73,10 @@
     <div class="window links-window">
         <header>
             <h1>links.txt - Notepad</h1>
-            <button class="close-button" aria-label="Close window">✖</button>
+            <div class="window-controls">
+                <button class="minimize-button" aria-label="Minimize window">–</button>
+                <button class="close-button" aria-label="Close window">✖</button>
+            </div>
         </header>
 
         <div class="notepad-menu">
@@ -190,6 +196,23 @@
             <img src="assets/bin.png" alt="">
             <span>Recycle Bin</span>
         </button>
+    </div>
+
+
+
+    <div class="taskbar">
+        <button class="start-button">
+            <img src="assets/windows.png" alt="">
+            Start
+        </button>
+
+        <div class="taskbar-divider"></div>
+
+        <div class="taskbar-windows"></div>
+
+        <div class="system-tray">
+            <span id="clock"></span>
+        </div>
     </div>
 
     <script src="script.js"></script>
